@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+  -->
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+</head>
+<body ng-app="starter">
+
+ <ion-pane ng-controller="TabController">
+   <ion-header-bar class="bar-stable bar-calm">
+      <h1 class="title">NickNameKids'</h1>
+    </ion-header-bar>
+    <ion-content >
+      <div class="list" ng-show="isSet(1)">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Mother Nick Name</span>
+          <input type="text" placeholder="John" ng-model="mName">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Farther Kick Name</span>
+          <input type="text" placeholder="Suhr" ng-model="fName">
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Sex
+          </div>
+          <select ng-model="sex">
+            <option>Male</option>
+            <option selected>Female</option>
+          </select>
+        </label>
+        <button class="button button-block button-positive">
+          Random
+        </button>
+        {{fName}}
+      </div>
+      <ion-list>
+      
+  <ion-item ng-repeat="item in Name.Names" ng-show="isSet(2)">
+    {{item.NickName}}!
+  </ion-item>
+</ion-list>
+      <div class="list card" ng-show="isSet(3)">
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-home"></i>
+          Enter home address
+        </a>
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-ios-telephone"></i>
+          Enter phone number
+        </a>
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-wifi"></i>
+          Enter wireless password
+        </a>
+
+        <a href="#" class="item item-icon-left">
+          <i class="icon ion-card"></i>
+          Enter card information
+        </a>
+
+      </div>
+      <ion-list>
+     <a class="item item-thumbnail-left" href="tel:{{profile.phone}}" ng-show="isSet(4)" ng-repeat="profile in profiles">
+       <img src="{{profile.picture.medium}}" >
+       <h2>{{profile.name.first}}</h2>
+       <p>{{profile.phone}}</p>
+     </a>
+</ion-list>
+    </ion-content>
+    <ion-tabs class="tabs-positive tabs-icon-top" >
+      <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-" ng-click="setTab(1)">
+        <!-- Tab 1 content -->
+      </ion-tab>
+
+      <ion-tab title="Popular" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline" ng-click="setTab(2)">
+        <!-- Tab 2 content -->
+
+      </ion-tab>
+
+      <ion-tab title="About" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline" ng-click="setTab(3)">
+        <!-- Tab 3 content -->
+      </ion-tab>
+<ion-tab title="Team" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline" ng-click="setTab(4)">
+        <!-- Tab 3 content -->
+      </ion-tab>
+    </ion-tabs>
+  </ion-pane>-->
+</body>
+</html>
